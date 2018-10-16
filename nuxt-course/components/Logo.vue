@@ -16,6 +16,7 @@
   overflow: hidden;
   height: 180px;
   width: 245px;
+  zoom: 0.3;
 }
 
 .Triangle {
