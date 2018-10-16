@@ -5,33 +5,35 @@
         <h1>Get the latest tech news!</h1>
       </section>
       <section class="featured-posts">
-        <nuxt-link :to="'/posts/' + 1" class="post-preview">
-          <article>
-            <div class="post-thumbnail">
-
-            </div>
-            <div class="post-content">
-              <h2>Post Title</h2>
-              <p>Preview text</p>
-            </div>
-          </article>
-        </nuxt-link>
-
-        <nuxt-link :to="'/posts/' + 2" class="post-preview">
-          <article>
-            <div class="post-thumbnail">
-
-            </div>
-            <div class="post-content">
-              <h2>Post Title 2</h2>
-              <p>Preview text 2</p>
-            </div>
-          </article>
-        </nuxt-link>
+        <PostPreview
+          id="1"
+          title="50 project open-source Javascript"
+          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
+          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
+        <PostPreview
+          id="1"
+          title="50 project open-source Javascript"
+          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
+          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
+        <PostPreview
+          id="1"
+          title="50 project open-source Javascript"
+          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
+          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
       </section>
     </div>
   </div>
 </template>
+
+<script>
+import PostPreview from '@/components/Posts/PostPreview'
+
+export default {
+  components: {
+    PostPreview
+  }
+}
+</script>
 
 <style scoped>
 .intro {
@@ -68,41 +70,5 @@
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.post-preview {
-  border: 1px solid #ccc;
-  box-shadow: 0 2px 2px #ccc;
-  background-color: white;
-  width: 90%;
-}
-
-a {
-  text-decoration: none;
-  color: black;
-}
-
-@media (min-width: 850px) {
-  .post-preview {
-    width: 400px;
-    margin: 10px;
-  }
-}
-
-.post-thumbnail {
-  width: 100%;
-  height: 200px;
-  background-position: center;
-  background-size: cover;
-}
-
-.post-content {
-  padding: 10px;
-  text-align: center;
-}
-
-a:hover .post-content,
-a:active .post-content {
-  background-color: #ccc;
 }
 </style>
