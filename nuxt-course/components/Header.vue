@@ -45,8 +45,14 @@ export default {
         width: 100px;
     }
     
-    .nav-items li a {
+    .nav-items a {
         color: #fff;
         text-decoration: none;
+        transition: .3s all;
+    }
+
+    .nav-items a:hover,
+    .nav-items a:active {
+        color: #d35400;
     }
 </style>

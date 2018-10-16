@@ -17,12 +17,6 @@ export default {
 }
 </script>
 
-<style scoped>
-  html {
-    padding: 0;
-  }
+<style>
 
-  body {
-    margin: 0 !important;
-  }
 </style>
