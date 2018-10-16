@@ -7,7 +7,7 @@ export default {
     validate (data) {
         let regexNumber = /^\d+$/;
         return regexNumber.test(data.params.id);
-    }
+    },
+    layout: 'users'
 }
 </script>
-
