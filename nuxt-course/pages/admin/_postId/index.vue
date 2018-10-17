@@ -1,9 +1,9 @@
 <template>
-    <div class="admin-post-page">
-        <section class="update-form">
-            <AdminPostForm :post="loadedPost" />
-        </section>
-    </div>
+  <div class="admin-post-page">
+    <section class="update-form">
+      <AdminPostForm :post="loadedPost" />
+    </section>
+  </div>
 </template>
 
 <script>
@@ -26,3 +26,9 @@ export default {
 }
 </script>
 
+<style scoped>
+.admin-post-page {
+  margin: 0 auto;
+  width: 1200px;
+}
+</style>

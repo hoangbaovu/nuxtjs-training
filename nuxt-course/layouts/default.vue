@@ -31,6 +31,7 @@ export default {
   }
 
   .container {
+    display: flex;
     min-width: 1200px;
     padding: 0;
     margin: 0;
