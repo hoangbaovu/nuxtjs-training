@@ -4,33 +4,17 @@
       <section class="intro">
         <h1>Get the latest tech news!</h1>
       </section>
-      <section class="featured-posts">
-        <PostPreview
-          id="1"
-          title="50 project open-source Javascript"
-          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
-        <PostPreview
-          id="1"
-          title="50 project open-source Javascript"
-          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
-        <PostPreview
-          id="1"
-          title="50 project open-source Javascript"
-          previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-          thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
-      </section>
+      <PostList />
     </div>
   </div>
 </template>
 
 <script>
-import PostPreview from '@/components/Posts/PostPreview'
+import PostList from '@/components/Posts/PostList'
 
 export default {
   components: {
-    PostPreview
+    PostList
   }
 }
 </script>
@@ -62,14 +46,5 @@ export default {
   .intro h1 {
     font-size: 2rem;
   }
-}
-
-.featured-posts {
-  display: flex;
-  padding: 20px;
-  box-sizing: border-box;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
 }
 </style>
