@@ -1,9 +1,11 @@
 <template>
   <div class="home-page">
-    <div class="container">
-      <section class="intro">
+    <section class="intro">
+      <div class="container">
         <h1>Get the latest tech news!</h1>
-      </section>
+      </div>
+    </section>
+    <div class="container">
       <PostList />
     </div>
   </div>

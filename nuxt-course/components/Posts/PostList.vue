@@ -2,16 +2,19 @@
   <div class="post-list">
     <PostPreview
       id="1"
+      :is-admin="isAdmin"
       title="50 project open-source Javascript"
       previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
       thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
     <PostPreview
-      id="1"
+      id="2"
+      :is-admin="isAdmin"
       title="50 project open-source Javascript"
       previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
       thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
     <PostPreview
-      id="1"
+      id="3"
+      :is-admin="isAdmin"
       title="50 project open-source Javascript"
       previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
       thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
@@ -24,6 +27,12 @@ import PostPreview from '@/components/Posts/PostPreview'
 export default {
   components: {
     PostPreview
+  },
+  props: {
+    isAdmin: {
+      type: Boolean,
+      default: false
+    }
   }
 }
 </script>
