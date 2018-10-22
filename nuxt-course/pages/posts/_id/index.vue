@@ -16,6 +16,9 @@
 <script>
 export default {
   asyncData(context, callback) {
+    return new Promise().catch(e =>{
+      context.error(new Error())
+    });
     setTimeout(() => {
       callback(null, {
         loadedPosts: 
@@ -29,7 +32,6 @@ export default {
               thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
             },
       });
-      this.$route.params
     },1500)
   }
 }
