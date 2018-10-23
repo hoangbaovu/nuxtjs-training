@@ -6,7 +6,7 @@
       </div>
     </section>
     <div class="container">
-      <PostList />
+      <PostList :posts="loadedPosts" />
     </div>
   </div>
 </template>
@@ -17,7 +17,40 @@ import PostList from '@/components/Posts/PostList'
 export default {
   components: {
     PostList
+  },
+  computed: {
+    loadedPosts() {
+      return this.$store.getters.loadedPosts
+    }
   }
+  // asyncData(context, callback) {
+  //   console.log('asynData is executed!');
+  //   console.log(context);
+  //   setTimeout(() => {
+  //     callback(null, {
+  //       loadedPosts: [
+  //           {
+  //             id: '1',
+  //             title: 'First Post',
+  //             previewText: 'This is a....',
+  //             thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
+  //           },
+  //           {
+  //             id: '2',
+  //             title: 'Second Post',
+  //             previewText: 'This is a....',
+  //             thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
+  //           },
+  //           {
+  //             id: '3',
+  //             title: 'Three Post',
+  //             previewText: 'This is a....',
+  //             thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
+  //           }
+  //         ]
+  //     });
+  //   }, 1500)
+  // },
 }
 </script>
 

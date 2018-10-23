@@ -1,23 +1,13 @@
 <template>
   <div class="post-list">
     <PostPreview
-      id="1"
+      v-for="post in posts"
+      :key="post.id"
+      :id="post.id"
       :is-admin="isAdmin"
-      title="50 project open-source Javascript"
-      previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-      thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
-    <PostPreview
-      id="2"
-      :is-admin="isAdmin"
-      title="50 project open-source Javascript"
-      previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-      thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
-    <PostPreview
-      id="3"
-      :is-admin="isAdmin"
-      title="50 project open-source Javascript"
-      previewText="VuePress là một trình tạo site tĩnh tối giản với hệ thống Vue-powered theming"
-      thumbnail="https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png" />
+      :title="post.title"
+      :previewText="post.previewText"
+      :thumbnail="post.thumbnail" />
   </div>
 </template>
 
@@ -32,6 +22,10 @@ export default {
     isAdmin: {
       type: Boolean,
       default: false
+    },
+    posts: {
+      type: Array,
+      required: true
     }
   }
 }
