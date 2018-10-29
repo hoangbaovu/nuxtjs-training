@@ -1,12 +1,13 @@
 <template>
   <section class="admin-new-post-page">
     <section class="admin-new-post-form">
-      <AdminPostForm />
+      <AdminPostForm @submit="onSubmitted" />
     </section>
   </section>
 </template>
 
 <script>
+import axios from 'axios'
 import AdminPostForm from '@/components/Admin/AdminPostForm'
 
 export default {
@@ -14,6 +15,13 @@ export default {
   components: {
     AdminPostForm
   },
+  methods: {
+    onSubmitted(postData) {
+      axios.post('https://nuxt-blog-a4685.firebaseio.com/posts.json', postData)
+        .then(result => console.log(result))
+        .catch(e => console.log(e))
+    }
+  }
 }
 </script>
 
