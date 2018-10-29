@@ -16,32 +16,23 @@
 <script>
 export default {
   asyncData(context, callback) {
-    return new Promise((resolve, reject)=> {
-      setTimeout(() => {
-       resolve( {
-          loadedPosts: {
-            id: '1',
-            title: "First Post (ID: " + context.route.params.id + ")",
-            previewText: 'This is a....',
-            author: 'Maximilian',
-            updatedDate: new Date(),
-            content: 'First Post text which is....',
-            thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
-          },
-        });
-      },1500)
-      // reject(new Error())
-    })
-    .then(data => {
-      return data
-    })
-    .catch(e =>{
-      context.error(e)
-    });
-  }
-}
+    setTimeout(() => {
+      callback(null, {
+        loadedPosts: {
+          id: '1',
+          title: "First Post (ID: " + context.route.params.id + ")",
+          previewText: 'This is a....',
+          author: 'Maximilian',
+          updatedDate: new Date(),
+          content: 'First Post text which is....',
+          thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
+        }
+      });
+    },1500);
+    // reject(new Error())
+  },
+};
 </script>
-
 
 <style scoped>
 .single-post-page {
