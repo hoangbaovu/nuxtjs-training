@@ -38,8 +38,7 @@ const createStore = () => {
         return axios
           .post('https://nuxt-blog-a4685.firebaseio.com/posts.json', createdPost)
           .then(result => {
-            vuexContext.commit('addPost', { ...createdPost, id: result.data.name })
-            this.$route.push('admin')
+            vuexContext.commit('addPost', { ...createdPost, id: result.data.name });
           })
           .catch(e => console.log(e))
       },
