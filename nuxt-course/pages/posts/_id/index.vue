@@ -15,22 +15,17 @@
 
 // test ssh
 <script>
+import axios from 'axios'
+
 export default {
-  asyncData(context, callback) {
-    setTimeout(() => {
-      callback(null, {
-        loadedPosts: {
-          id: '1',
-          title: "First Post (ID: " + context.route.params.id + ")",
-          previewText: 'This is a....',
-          author: 'Maximilian',
-          updatedDate: new Date(),
-          content: 'First Post text which is....',
-          thumbnail: 'https://images.viblo.asia/166bfddd-c9d9-4dc6-ac92-b5deb3d751c1.png'
+  asyncData(context) {
+    return axios.get('https://nuxt-blog-a4685.firebaseio.com/posts/' + context.params.id + '.json')
+      .then(res => {
+        return {
+          loadedPost: res.data
         }
-      });
-    },1500);
-    // reject(new Error())
+      })
+      .catch(e => context.error(e));
   },
 };
 </script>
