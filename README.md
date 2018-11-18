@@ -1,2 +1,0 @@
-# nuxtjs-training
-Learn nuxtjs
