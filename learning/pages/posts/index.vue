@@ -7,6 +7,16 @@
 </template>
 
 <script>
+export default {
+  asyncData(context) {
+    console.log(context);
+  }
+}
+</script>
+
+
+<!--
+<script>
 import axios from 'axios'
 
 export default {
@@ -28,3 +38,4 @@ export default {
   }
 }
 </script>
+-->
