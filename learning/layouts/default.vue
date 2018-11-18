@@ -1,7 +1,10 @@
 <template>
   <div>
     <Nav/>
-    <nuxt/>
+    <div class="jumbotron"></div>
+    <div class="container">
+      <nuxt/>
+    </div>
   </div>
 </template>
 

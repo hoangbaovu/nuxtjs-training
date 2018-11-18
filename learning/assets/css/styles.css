@@ -1,0 +1,10 @@
+body {
+  background: #eee;
+}
+
+.jumbotron {
+  background: url('https://cdn.pixabay.com/photo/2018/10/04/14/22/donut-3723751_960_720.jpg');
+  background-size: cover;
+  height: 300px;
+  border-radius: 0;
+}
