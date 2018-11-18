@@ -7,9 +7,22 @@
 </template>
 
 <script>
+import axios from 'axios'
+
 export default {
-  asyncData(context) {
-    console.log(context);
+  data() {
+    return {
+      posts: ''
+    }
+  },
+  asyncData() {
+    return axios.get('https://jsonplaceholder.typicode.com/todos')
+      .then(res => {
+        return { posts: res.data }
+      })
+      .catch(e => {
+        console.log();
+      })
   }
 }
 </script>
