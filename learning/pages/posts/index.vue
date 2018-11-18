@@ -15,14 +15,12 @@ export default {
       posts: ''
     }
   },
-  asyncData() {
-    return axios.get('https://jsonplaceholder.typicode.com/todos')
-      .then(res => {
-        return { posts: res.data }
-      })
-      .catch(e => {
-        console.log();
-      })
+  async asyncData() {
+    let {data} = await axios.get('https://jsonplaceholder.typicode.com/todos')
+    return { posts: data }
+  },
+  head: {
+    title: 'List of Posts'
   }
 }
 </script>
