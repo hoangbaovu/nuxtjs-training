@@ -5,8 +5,7 @@
       <p class="card-text">{{ post.body }}</p>
     </div>
     <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
+      <nuxt-link :to="{ name : 'posts-id', params: {id: post.id} }" class="card-link">Link</nuxt-link>
     </div>
   </div>
 </template>
