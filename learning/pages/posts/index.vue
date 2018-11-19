@@ -8,6 +8,7 @@
         :key="post.id"
         :post="post"
         />
+      <button class="btn btn-primary" v-scroll-to="'body'">Back to Top</button>
     </div>
 
 
