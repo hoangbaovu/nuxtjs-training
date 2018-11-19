@@ -37,11 +37,11 @@ export default {
     //   return this.$store.getters.posts
     // }
   },
-  async fetch({store}) {
-    let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    // return { allPosts: data }
-    store.dispatch('setPosts', data)
-  },
+  // async fetch({store}) {
+  //   let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   // return { allPosts: data }
+  //   store.dispatch('setPosts', data)
+  // },
   // async asyncData({store}) {
   //   let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
   //   // return { allPosts: data }
