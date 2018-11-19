@@ -2,21 +2,33 @@
   <div>
     <h2>Making API request - The Vue way</h2>
 
-    <h3 v-for="post in posts" v-bind:key="post.id">{{ post.title}}</h3>
+    <div class="row">
+      <Card class="col-md-4 mx-1 my-1"
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+        />
+    </div>
+
+
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Card from '@/components/Card'
 
 export default {
+  components: {
+    Card
+  },
   data() {
     return {
       posts: ''
     }
   },
   async asyncData() {
-    let {data} = await axios.get('https://jsonplaceholder.typicode.com/todos')
+    let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
     return { posts: data }
   },
   head: {
