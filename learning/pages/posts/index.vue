@@ -18,19 +18,34 @@
 import axios from 'axios'
 import Card from '@/components/Card'
 
+import {mapGetters} from 'vuex'
+
 export default {
   components: {
     Card
   },
   data() {
     return {
-      posts: ''
+      allPosts: ''
     }
   },
-  async asyncData() {
-    let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
-    return { posts: data }
+  computed: {
+    ...mapGetters(['posts'])
+
+    // allPosts() {
+    //   return this.$store.getters.posts
+    // }
   },
+  async fetch({store}) {
+    let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+    // return { allPosts: data }
+    store.dispatch('setPosts', data)
+  },
+  // async asyncData({store}) {
+  //   let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   // return { allPosts: data }
+  //   store.dispatch('setPosts', data)
+  // },
   head: {
     title: 'List of Posts'
   }

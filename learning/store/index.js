@@ -23,7 +23,7 @@ export const mutations = {
 // actions
 
 export const actions = {
-  setPosts({commit}, posts) {
+  setPosts({ commit }, posts) {
     commit("SET_POSTS", posts);
   }
 }
