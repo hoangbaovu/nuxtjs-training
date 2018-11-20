@@ -2,23 +2,51 @@
   <div>
     <h2>Making API request - The Vue way</h2>
 
-    <h3 v-for="post in posts" v-bind:key="post.id">{{ post.title}}</h3>
+    <div class="row">
+      <Card class="col-md-4 mx-1 my-1"
+        v-for="post in posts"
+        :key="post.id"
+        :post="post"
+        />
+      <button class="btn btn-primary" v-scroll-to="'body'">Back to Top</button>
+    </div>
+
+
   </div>
 </template>
 
 <script>
 import axios from 'axios'
+import Card from '@/components/Card'
+
+import {mapGetters} from 'vuex'
 
 export default {
+  components: {
+    Card
+  },
   data() {
     return {
-      posts: ''
+      allPosts: ''
     }
   },
-  async asyncData() {
-    let {data} = await axios.get('https://jsonplaceholder.typicode.com/todos')
-    return { posts: data }
+  computed: {
+    ...mapGetters(['posts'])
+
+    // allPosts() {
+    //   return this.$store.getters.posts
+    // }
   },
+  // async fetch({store}) {
+  //   let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   // return { allPosts: data }
+  //   store.dispatch('setPosts', data)
+  // },
+  // async asyncData({store}) {
+  //   let {data} = await axios.get('https://jsonplaceholder.typicode.com/posts')
+  //   // return { allPosts: data }
+  //   store.dispatch('setPosts', data)
+  // },
   head: {
     title: 'List of Posts'
   }

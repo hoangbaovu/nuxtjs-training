@@ -3,8 +3,16 @@ body {
 }
 
 .jumbotron {
-  background: url('https://cdn.pixabay.com/photo/2018/10/04/14/22/donut-3723751_960_720.jpg');
+  background: url('/jumbotron.jpg');
   background-size: cover;
   height: 300px;
   border-radius: 0;
+}
+
+
+.fade-enter-active, .fade-leave-active {
+  transition: opacity .5s;
+}
+.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+  opacity: 0;
 }

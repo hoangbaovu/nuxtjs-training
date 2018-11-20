@@ -42,10 +42,20 @@ module.exports = {
     "@/assets/css/styles.css"
   ],
 
+  transition: {
+    name: "fade",
+    mode: "out-in"
+  },
+
   /*
   ** Plugins to load before mounting the App
   */
   plugins: [
+    "@/plugins/scrollto.js",
+    {
+      src: "@/plugins/vueselect.js",
+      ssr: false
+    }
   ],
 
   /*

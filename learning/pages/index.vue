@@ -2,6 +2,9 @@
   <div>
     <h1>Hello World</h1>
 
+    <no-ssr>
+    <v-select v-model="selected" placeholder="Select Category" :options="['foo', 'bar']"></v-select>
+    </no-ssr>
     <input type="text" v-model="id">
     <button @click="loadUser">load User</button>
   </div>
@@ -11,7 +14,8 @@
 export default {
   data() {
     return {
-      id: ''
+      id: '',
+      selected: ''
     }
   },
   methods: {
