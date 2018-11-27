@@ -1,10 +1,12 @@
 <template>
-  <h1>Hello world</h1>
+  <div>
+    <h2>User Profile</h2>
+  </div>
 </template>
 
 <script>
 export default {
-  // middleware: ['auth']
+
 }
 </script>
 
