@@ -11,7 +11,8 @@ use App\Http\Requests\TopicCreateRequest;
 
 class TopicController extends Controller
 {
-    public function store(TopicCreateRequest $request) {
+    public function store(TopicCreateRequest $request)
+    {
         $topic = new Topic;
         $topic->title = $request->title;
         $topic->user()->associate($request->user());
@@ -24,5 +25,12 @@ class TopicController extends Controller
         $topic->posts()->save($post);
 
         return new TopicResource($topic);
+    }
+
+    public function index()
+    {
+        $topics = Topic::latestFirst()->paginate(2);
+
+        return TopicResource::collection($topics);
     }
 }
