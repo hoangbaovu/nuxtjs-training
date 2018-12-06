@@ -3,6 +3,14 @@
     <h2>Latest Topics</h2>
     <div v-for="(topic, index) in topics" :key="index" class="bg-light mt-5 mb-5">
       <nuxt-link :to="{name: 'topics-id', params: {id: topic.id}}">{{topic.title}}</nuxt-link>
+
+      <div v-if="authenticated">
+        <div v-if="user.id === topic.user.id">
+          <nuxt-link :to="{name: 'topics-edit', params: {id: topic.id}}">
+            <button class="btn btn-outline-success fas fa-edit float-right"></button>
+          </nuxt-link>
+        </div>
+      </div>
       <p class="text-muted">{{ topic.created_at }} by {{ topic.user.name }}</p>
 
       <div v-for="(content, index) in topic.posts" :key="index" class="ml-5 content">
