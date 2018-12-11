@@ -9,6 +9,8 @@
           <nuxt-link :to="{name: 'topics-edit', params: {id: topic.id}}">
             <button class="btn btn-outline-success fas fa-edit float-right"></button>
           </nuxt-link>
+
+          <button @click="deleteTopic(topic.id)" class="btn btn-outline-danger fas fa-trash float-right"></button>
         </div>
       </div>
       <p class="text-muted">{{ topic.created_at }} by {{ topic.user.name }}</p>
@@ -59,6 +61,10 @@ export default {
     async loadMore(key) {
       let {data} = await this.$axios.$get(key);
       return this.topics = {...this.topics, ...data};
+    },
+    async deleteTopic(id) {
+      this.$axios.$delete(`/topics/${id}`);
+      this.$router.push('/');
     }
   }
 }
