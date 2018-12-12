@@ -34,6 +34,11 @@ class User extends Authenticatable implements JWTSubject
         return $this->id === $topic->user->id;
     }
 
+    public function ownsPost(Post $post)
+    {
+        return $this->id === $post->user->id;
+    }
+
     /**
      * Get the identifier that will be stored in the subject claim of the JWT.
      *
